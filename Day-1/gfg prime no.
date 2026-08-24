@@ -1,0 +1,22 @@
+class Solution:
+        def isPrime(self, n: int) -> bool:
+            # 1 and smaller are not prime numbers
+            if n <= 1:
+                return False
+
+            # 2 and 3 are prime numbers
+            if n <= 3:
+                return True
+
+            # Exclude multiples of 2 and 3
+            if n % 2 == 0 or n % 3 == 0:
+                return False
+
+            # Check factors up to sqrt(n) using 6k +/- 1 optimization
+            i = 5
+            while i * i <= n:
+                if n % i == 0 or n % (i + 2) == 0:
+                    return False
+                i += 6
+
+            return True
