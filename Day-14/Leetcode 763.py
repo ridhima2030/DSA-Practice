@@ -1,0 +1,10 @@
+class Solution:
+    def partitionLabels(self, s: str) -> list[int]:
+        last = {c: i for i, c in enumerate(s)}
+        res, start, end = [], 0, 0
+        for i, c in enumerate(s):
+            end = max(end, last[c])
+            if i == end:
+                res.append(i - start + 1)
+                start = i + 1
+        return res
