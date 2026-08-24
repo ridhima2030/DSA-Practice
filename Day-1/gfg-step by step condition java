@@ -1,0 +1,16 @@
+class Geeks {
+    static void isDivisibleByPrime(int n) {
+        // Use Math.abs to handle negative input numbers correctly
+        int num = Math.abs(n);
+
+        if (num % 11 == 0) {
+            System.out.println("Eleven");
+        } else if (num % 3 == 0) {
+            System.out.println("Three");
+        } else if (num % 2 == 0) {
+            System.out.println("Two");
+        } else {
+            System.out.println("-1");
+        }
+    }
+}
